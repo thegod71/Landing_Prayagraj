@@ -1,0 +1,139 @@
+.painpoints-section {
+  background-color: #faf9f6;
+  padding-top: 68px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid #ede8de;
+}
+
+.painpoints-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.painpoints-title {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0b1a30;
+  margin-bottom: 10px;
+}
+
+.painpoints-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* 4 Cards Grid */
+.painpoints-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.painpoint-card {
+  background: #ffffff;
+  border: 1px solid #e7e2d6;
+  border-radius: 12px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(11, 26, 48, 0.03);
+}
+
+.painpoint-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.painpoint-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(11, 26, 48, 0.08);
+  border-color: #d4a754;
+}
+
+.painpoint-card:hover::before {
+  background: var(--color-gold-gradient);
+}
+
+.painpoint-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fef8ee;
+  border: 1.5px solid #ecd8af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b07415;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.painpoint-card:hover .painpoint-icon-wrapper {
+  transform: scale(1.08) rotate(4deg);
+  background: #c88a22;
+  color: #ffffff;
+  border-color: #c88a22;
+}
+
+.painpoint-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0b1a30;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.painpoint-card-desc {
+  font-size: 0.86rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+/* Creative solution pill on hover */
+.painpoint-solution-tag {
+  margin-top: auto;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border-left: 3px solid #c88a22;
+  font-size: 0.74rem;
+  color: #334155;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.painpoint-solution-tag strong {
+  color: #b07415;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .painpoints-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .painpoints-grid {
+    grid-template-columns: 1fr;
+  }
+  .painpoints-title {
+    font-size: 1.85rem;
+  }
+}

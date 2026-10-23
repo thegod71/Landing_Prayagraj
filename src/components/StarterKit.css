@@ -1,0 +1,233 @@
+.starterkit-section {
+  padding-top: 40px;
+  padding-bottom: 70px;
+  background-color: #faf9f6;
+}
+
+.starterkit-banner {
+  background: linear-gradient(135deg, #0b1a30 0%, #112847 100%);
+  border-radius: 16px;
+  padding: 40px 36px;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 240px 1fr 320px;
+  gap: 36px;
+  align-items: center;
+  box-shadow: 0 15px 35px rgba(11, 26, 48, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.starterkit-banner::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 20%;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(200, 138, 34, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Left: Kit Mockup with Soft Shade (no harsh block border) */
+.starterkit-visual {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  /* Soft feathered shade mask */
+  -webkit-mask-image: radial-gradient(ellipse 94% 94% at 50% 50%, black 72%, rgba(0, 0, 0, 0.4) 90%, transparent 100%);
+  mask-image: radial-gradient(ellipse 94% 94% at 50% 50%, black 72%, rgba(0, 0, 0, 0.4) 90%, transparent 100%);
+}
+
+.starterkit-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.starterkit-visual:hover .starterkit-img {
+  transform: scale(1.04);
+}
+
+.starterkit-free-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #c88a22;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Middle: Info & Pills */
+.starterkit-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.starterkit-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.starterkit-title-gold {
+  color: #f6ad55;
+}
+
+.starterkit-subtitle {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+.starterkit-pills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.starterkit-pill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.starterkit-pill-icon {
+  color: #f6ad55;
+  display: flex;
+  align-items: center;
+}
+
+/* Right: Form */
+.starterkit-form-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 22px 20px;
+  color: #0b1a30;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.starterkit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kit-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kit-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.kit-input,
+.kit-select {
+  width: 100%;
+  padding: 8px 10px;
+  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.kit-input:focus,
+.kit-select:focus {
+  border-color: #c88a22;
+}
+
+.btn-kit-download {
+  background: #c88a22;
+  color: #ffffff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: all 0.2s;
+}
+
+.btn-kit-download:hover:not(:disabled) {
+  background: #b07415;
+}
+
+.btn-kit-download:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.kit-success-box {
+  text-align: center;
+  padding: 14px 4px;
+}
+
+.kit-success-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 6px;
+}
+
+.kit-success-desc {
+  font-size: 0.78rem;
+  color: #475569;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.btn-instant-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0b1a30;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .starterkit-banner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .starterkit-visual {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}

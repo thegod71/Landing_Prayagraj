@@ -1,0 +1,215 @@
+.navbar-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #ebe8e1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  gap: 20px;
+}
+
+/* Brand Logo */
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.brand-emblem {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #0b1a30 0%, #152d50 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(11, 26, 48, 0.15);
+  border: 2px solid #e8c784;
+}
+
+.brand-emblem-inner {
+  color: #fbbf24;
+  font-size: 20px;
+}
+
+.brand-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.brand-name {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #0b1a30;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.brand-subline {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #786f65;
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+  font-style: italic;
+}
+
+.brand-city-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fef8ee;
+  border: 1px solid #ecd8af;
+  padding: 1px 8px;
+  border-radius: 12px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #925c0a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+  width: fit-content;
+}
+
+/* Top Value Props from Image */
+.nav-features {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.nav-feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.nav-feature-item:hover .nav-feature-icon {
+  color: var(--color-gold);
+}
+
+.nav-feature-text {
+  line-height: 1.2;
+}
+
+/* City Switcher / Creative addition for Prayagraj & Lucknow */
+.city-pill-selector {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: 20px;
+  padding: 2px;
+  border: 1px solid #e2e8f0;
+}
+
+.city-pill-btn {
+  border: none;
+  background: transparent;
+  padding: 4px 10px;
+  border-radius: 18px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.city-pill-btn.active {
+  background: #ffffff;
+  color: #0b1a30;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Actions */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.phone-quick-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0b1a30;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+}
+
+.phone-quick-link:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.btn-nav-counselling {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-gold-gradient);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(200, 138, 34, 0.3);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-nav-counselling:hover {
+  background: var(--color-gold-gradient-hover);
+  transform: translateY(-1px);
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+  .nav-features {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .phone-quick-link {
+    display: none;
+  }
+  .city-pill-selector {
+    display: none;
+  }
+}
