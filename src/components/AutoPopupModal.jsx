@@ -11,7 +11,7 @@ export default function AutoPopupModal({ activeCity = 'Prayagraj', isOpen, onClo
     fullName: '',
     mobile: '',
     exam: 'UPSC CSE',
-    centre: `${activeCity} Centre`,
+    city: '',
     targetYear: '2025',
   });
 
@@ -80,7 +80,10 @@ export default function AutoPopupModal({ activeCity = 'Prayagraj', isOpen, onClo
       setErrorMsg('Please enter a valid 10-digit mobile number');
       return;
     }
-
+    if (!formData.city.trim()) {
+        setErrorMsg('Please enter your city');
+        return;
+    }
     setLoading(true);
     setErrorMsg('');
 
@@ -88,7 +91,7 @@ export default function AutoPopupModal({ activeCity = 'Prayagraj', isOpen, onClo
       const res = await submitLead({
         ...formData,
         source: 'Auto Opening Pop-up Form',
-        city: activeCity,
+        city: formData.city.trim(),
       });
 
       if (res.success) {
@@ -133,7 +136,7 @@ export default function AutoPopupModal({ activeCity = 'Prayagraj', isOpen, onClo
 
           <h3 className="autopopup-title">
             Book 1-on-1 Mentorship &amp; <br />
-            Get <span className="autopopup-title-gold">Up to 50% Scholarship</span>
+            Get <span className="autopopup-title-gold">Up to 30% Scholarship</span>
           </h3>
 
           <p className="autopopup-subtitle">
@@ -189,18 +192,17 @@ export default function AutoPopupModal({ activeCity = 'Prayagraj', isOpen, onClo
                 </div>
 
                 <div className="popup-input-group">
-                  <label className="popup-label">Preferred Centre</label>
-                  <select
-                    name="centre"
-                    className="popup-select"
-                    value={formData.centre}
-                    onChange={handleChange}
-                  >
-                    <option value={`${activeCity} Centre`}>{activeCity} Centre</option>
-                    <option value="Prayagraj Centre">Prayagraj Centre</option>
-                    <option value="Lucknow Centre">Lucknow Centre</option>
-                  </select>
-                </div>
+  <label className="popup-label">Enter your City</label>
+  <input
+    type="text"
+    name="city"
+    className="popup-input"
+    placeholder="e.g. Prayagraj"
+    value={formData.city}
+    onChange={handleChange}
+    required
+  />
+</div>
               </div>
 
               {errorMsg && (

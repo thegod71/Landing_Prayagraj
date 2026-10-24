@@ -113,11 +113,11 @@ export default function Hero({ onOpenLeadModal, activeCity = 'Prayagraj' }) {
             {/* 4 Stats from Reference Image */}
             <div className="hero-stats-row">
               <div className="stat-item">
-                <span className="stat-number">20+</span>
+                <span className="stat-number">25+</span>
                 <span className="stat-label">Years of Excellence</span>
               </div>
               <div className="stat-item">
-                <span className="stat-number">1000+</span>
+                <span className="stat-number">3000+</span>
                 <span className="stat-label">Selections Across Programmes</span>
               </div>
               <div className="stat-item">
