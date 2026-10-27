@@ -10,7 +10,7 @@ export default function Hero({ onOpenLeadModal, activeCity = 'Prayagraj' }) {
     stage: 'Beginner',
     fullName: '',
     mobile: '',
-    city: activeCity === 'Lucknow' ? 'Lucknow' : 'Prayagraj',
+    city: '',
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,7 +37,10 @@ export default function Hero({ onOpenLeadModal, activeCity = 'Prayagraj' }) {
       setErrorMsg('Please enter a valid 10-digit mobile number');
       return;
     }
-
+    if (!formData.city.trim()) {
+            setErrorMsg('Please enter your city');
+            return;
+    }
     setIsSubmitting(true);
     setErrorMsg('');
 
@@ -206,14 +209,17 @@ export default function Hero({ onOpenLeadModal, activeCity = 'Prayagraj' }) {
                     </div>
 
                     <div className="form-group">
-                      <label className="form-label">Your City</label>
+                      <label className="form-label">Enter Your City</label>
                       <input
                         type="text"
                         name="city"
                         className="form-input"
-                        placeholder={activeCity}
+                        placeholder="e.g. Prayagraj"
                         value={formData.city}
                         onChange={handleChange}
+                        required
+
+                        
                       />
                     </div>
 
@@ -222,7 +228,6 @@ export default function Hero({ onOpenLeadModal, activeCity = 'Prayagraj' }) {
                         {errorMsg}
                       </p>
                     )}
-
                     <button
                       type="submit"
                       className="btn-hero-submit"
